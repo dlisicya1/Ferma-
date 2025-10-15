@@ -1,0 +1,60 @@
+/* Головна сторінка */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f0;
+    color: #333;
+}
+
+header {
+    background-color: #f27c3b;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.about {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about button {
+    padding: 15px 30px;
+    background-color: #f27c3b;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.about button:hover {
+    background-color: #d95400;
+}
+
+footer {
+    background-color: #f27c3b;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
