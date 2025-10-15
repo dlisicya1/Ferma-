@@ -1,0 +1,54 @@
+const products = [
+    {name: "Бройлер", price: "140 грн"},
+    {name: "Качка", price: "184 грн"},
+    {name: "Табак", price: "160 грн"},
+    {name: "Півень домашній", price: "152 грн"},
+    {name: "Бульйонка", price: "80 грн"},
+    {name: "Філе", price: "215 грн"},
+    {name: "Окорок", price: "162,5 грн"},
+    {name: "Стегно", price: "183 грн"},
+    {name: "Гомілка", price: "152 грн"},
+    {name: "Крило", price: "162,5 грн"},
+    {name: "Фаланга крила", price: "150,5 грн"},
+    {name: "Обрізка крила", price: "160,5 грн"},
+    {name: "Шия", price: "73 грн"},
+    {name: "Нижня частина", price: "66,5 грн"},
+    {name: "Каркас", price: "62 грн"},
+    {name: "Фаланга", price: "37,5 грн"},
+    {name: "Серединка", price: "65,5 грн"},
+    {name: "Лапи", price: "25 грн"},
+    {name: "Голова", price: "25 грн"},
+    {name: "Фарш собачий", price: "25 грн"},
+    {name: "Шкурка куряча", price: "27 грн"},
+    {name: "Жир курячий", price: "25 грн"},
+    {name: "Фарш курячий жировий", price: "205 грн"},
+    {name: "Фарш філейний", price: "225 грн"},
+    {name: "Ціле стегно", price: "213 грн"},
+    {name: "Кістка стегна", price: "38 грн"},
+    {name: "Гуляш", price: "182 грн"},
+    {name: "Печінка", price: "146,5 грн"},
+    {name: "Серце", price: "159,5 грн"},
+    {name: "Шлунок", price: "120 грн"},
+    {name: "Гомілка обрізна", price: "176 грн"},
+    {name: "Кістка гомілки обрізної", price: "38 грн"}
+];
+
+const productsContainer = document.getElementById('products');
+
+function displayProducts(filteredProducts) {
+    productsContainer.innerHTML = '';
+    filteredProducts.forEach(product => {
+        const div = document.createElement('div');
+        div.classList.add('product');
+        div.innerHTML = <h3>${product.name} – ${product.price}</h3>;
+        productsContainer.appendChild(div);
+    });
+}
+
+displayProducts(products);
+
+document.getElementById('search').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const filtered = products.filter(product => product.name.toLowerCase().includes(query));
+    displayProducts(filtered);
+});
